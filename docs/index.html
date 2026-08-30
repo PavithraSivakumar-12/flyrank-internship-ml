@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlyRank Capstone — Refresh-Priority Model</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      color: #222;
+      background: #f7f7f7;
+    }
+
+    main {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #222;
+    }
+
+    h2 {
+      margin-top: 35px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 8px;
+    }
+
+    .meta {
+      background: #f1f1f1;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .links {
+      margin: 25px 0;
+    }
+
+    .links a {
+      display: inline-block;
+      margin-right: 12px;
+      margin-bottom: 10px;
+      padding: 10px 15px;
+      background: #24292f;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .links a:hover {
+      opacity: 0.85;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+
+<body>
+<main>
+
+  <h1>FlyRank Capstone — Refresh-Priority Model</h1>
+
+  <div class="meta">
+    <p><strong>Author:</strong> Pavithra Sivakumar</p>
+    <p><strong>Lane:</strong> Machine Learning</p>
+    <p><strong>Repository:</strong>
+      <a href="https://github.com/PavithraSivakumar-12/flyrank-internship-ml">
+        GitHub repository
+      </a>
+    </p>
+  </div>
+
+  <h2>0. Abstract</h2>
+
+  <p>
+    This capstone asks which pages from a client's existing content should
+    be prioritized for a refresh review. The analysis uses the FlyRank
+    content-refresh dataset and evaluates signals associated with page
+    performance and refresh priority. The project develops and evaluates a
+    machine-learning approach against a transparent baseline. The resulting
+    score is intended to support a ranked editorial review queue. The output
+    is decision support for prioritizing content review rather than a claim
+    about any search-engine ranking algorithm.
+  </p>
+
+  <h2>1. Problem framing</h2>
+
+  <p>
+    The decision supported by this project is:
+  </p>
+
+  <blockquote>
+    Among a client's existing content, which pages should an editor
+    prioritize for a refresh review?
+  </blockquote>
+
+  <p>
+    The unit of analysis is an individual content page. The model produces
+    a decline-risk score for each page and uses that score to create a
+    ranked action queue.
+  </p>
+
+  <p>
+    A false positive may cause an editor to spend time reviewing content
+    that does not require a refresh, while a false negative may cause a
+    genuinely declining page to be overlooked.
+  </p>
+
+  <p>
+    Machine learning is useful because the dataset contains multiple
+    signals about content, visibility, engagement, search demand, and
+    other page characteristics that can be combined into a single
+    decision-support score.
+  </p>
+
+  <h2>2. Data safety</h2>
+
+  <p>
+    The project uses the local FlyRank content-refresh dataset available
+    in the repository. Pseudonymous client identifiers are used only for
+    grouping and evaluation where required and are not used as predictive
+    features.
+  </p>
+
+  <p>
+    Label-derived fields such as <code>trend_direction</code> and
+    <code>trend_pct</code> are excluded from model features to reduce
+    leakage risk. Client-identifying information is not intentionally
+    included in the deployed paper.
+  </p>
+
+  <h2>3. Baseline</h2>
+
+  <p>
+    The project first establishes a transparent baseline so that the
+    machine-learning model can be compared against a simple decision
+    rule. The baseline and model are evaluated on the same evaluation
+    split and using the same task metrics.
+  </p>
+
+  <h2>4. Model / analysis</h2>
+
+  <p>
+    The capstone uses a supervised machine-learning approach to estimate
+    page-level refresh priority. Features are selected from information
+    available before the decision and label-derived information is
+    deliberately excluded.
+  </p>
+
+  <p>
+    The target represents the page-level refresh-priority outcome defined
+    by the capstone dataset and analysis.
+  </p>
+
+  <h2>5. Evaluation</h2>
+
+  <p>
+    Evaluation follows the split and validation procedure implemented in
+    the capstone notebook. Model performance is compared with the baseline
+    on the same evaluation data.
+  </p>
+
+  <p>
+    The detailed metrics, validation checks, and error analysis are
+    recorded in the capstone notebook and repository outputs.
+  </p>
+
+  <h2>6. Interpretation</h2>
+
+  <p>
+    The model is interpreted as a decision-support system for identifying
+    pages that may deserve earlier editorial attention. Feature-level
+    analysis is used to understand which available signals contribute to
+    the model's decisions.
+  </p>
+
+  <p>
+    These results should be interpreted as observed predictive patterns in
+    the dataset, not as causal effects.
+  </p>
+
+  <h2>7. Recommendation</h2>
+
+  <p>
+    The recommended workflow is to rank existing pages by the model's
+    refresh-priority score and have editors review the highest-priority
+    pages first.
+  </p>
+
+  <p>
+    The score should be treated as decision support rather than an
+    automatic publishing or deletion decision. Human review remains
+    necessary, particularly for borderline predictions and unusual pages.
+  </p>
+
+  <h2>8. Reproducibility</h2>
+
+  <p>
+    The complete analysis is maintained in the repository, including the
+    capstone notebook and supporting project files.
+  </p>
+
+  <div class="links">
+    <a href="../work/notebooks/capstone.ipynb">
+      Capstone Notebook
+    </a>
+
+    <a href="../work/capstone_report.md">
+      Capstone Report
+    </a>
+
+    <a href="https://github.com/PavithraSivakumar-12/flyrank-internship-ml">
+      GitHub Repository
+    </a>
+  </div>
+
+  <h2>9. Acknowledgments &amp; data credit</h2>
+
+  <p>
+    Built on the
+    <a href="https://flyrank.ai">FlyRank ML Internship dataset</a>.
+  </p>
+
+  <footer>
+    <p>
+      This paper reports observed and measured results from the capstone
+      analysis and is intended for decision support. It does not claim to
+      reproduce or predict Google's ranking algorithm.
+    </p>
+  </footer>
+
+</main>
+</body>
+</html>
