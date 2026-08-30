@@ -201,14 +201,16 @@ These errors reinforce that the ranked output should be reviewed by a human edit
 
 The strongest model and permutation-importance signals were:
 
+The strongest model and permutation-importance signals were:
+
 1. `log_impressions_90d`
 2. `log_clicks_90d`
-3. `content_age_days`
-4. `log_sessions_90d`
-5. `avg_position`
-6. `word_count`
-7. `scroll_rate`
-8. `char_count`
+3. `word_count`
+4. `content_age_days`
+5. `log_sessions_90d`
+6. `char_count`
+7. `avg_position`
+8. `days_since_last_update`
 
 The agreement between model importance and permutation importance is useful because it provides two different views of which variables contribute to the model.
 
