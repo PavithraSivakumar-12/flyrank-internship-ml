@@ -253,7 +253,7 @@ The main limitations are:
 
 The notebook uses:
 
-`work/notebooks/capstone_refresh_priority.ipynb`
+`work/notebooks/capstone.ipynb`
 
 and the local dataset:
 
