@@ -168,7 +168,7 @@ The held-out-client results were:
 | Model | ROC AUC | Average Precision | Precision@50 | Precision@200 | Recall | Precision | F1 | Accuracy |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | Logistic Regression | 0.611 | 0.604 | 0.70 | 0.705 | 0.628 | 0.590 | 0.608 | 0.587 |
-| Decision Tree | 0.612 | 0.585 | 0.50 | 0.550 | 0.542 | 0.606 | 0.572 | 0.586 |
+| Decision Tree | 0.612 | 0.585 | 0.50 | 0.615 | 0.542 | 0.606 | 0.572 | 0.586 |
 | Random Forest | 0.599 | 0.582 | 0.52 | 0.470 | 0.581 | 0.587 | 0.584 | 0.577 |
 | Baseline rule | — | — | 0.30 | 0.380 | 0.047 | 0.385 | 0.084 | 0.475 |
 | Majority-class dummy | — | — | — | — | — | — | — | 0.511 |
