@@ -7,7 +7,7 @@
 
 ## 0. Abstract
 
-This capstone asks which pages from a client's existing content should be prioritized for a refresh review. The analysis uses the local FlyRank content-refresh dataset containing 30,000 rows across 32 pseudonymous clients. A sanctioned `is_declining_label` target was evaluated using leakage-aware features, a transparent rule-based baseline, and Logistic Regression, Decision Tree, and Random Forest models under a client-grouped train/test split. Logistic Regression achieved the strongest held-out-client precision@50 of 0.70 and ROC AUC of 0.611, compared with 0.30 precision@50 for the baseline rule on the same held-out clients. The resulting ranked queue is intended as decision support for editors who need to prioritize pages for human refresh review, not as an automated claim that a page will definitely improve after refreshing.
+This capstone asks which pages from a client's existing content should be prioritized for a refresh review. The analysis uses the local FlyRank content-refresh dataset containing 30,000 rows across 32 pseudonymous clients. A sanctioned `is_declining_label` target was evaluated using leakage-aware features, a transparent rule-based baseline, and Logistic Regression, Decision Tree, and Random Forest models under a client-grouped train/test split. Logistic Regression achieved the strongest held-out-client precision@50 of 0.70, with a ROC AUC of 0.611, compared with 0.30 precision@50 for the baseline rule on the same held-out clients. The resulting ranked queue is intended as decision support for editors who need to prioritize pages for human refresh review, not as an automated claim that a page will definitely improve after refreshing.
 
 ## 1. Problem framing
 
@@ -198,8 +198,6 @@ The false negatives included very low-impression pages. Examples had only 2, 3, 
 These errors reinforce that the ranked output should be reviewed by a human editor.
 
 ## 6. Interpretation
-
-The strongest model and permutation-importance signals were:
 
 The strongest model and permutation-importance signals were:
 
